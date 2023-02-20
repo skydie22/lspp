@@ -15,10 +15,10 @@
         </a>
         <ul class="submenu ">
             <li class="submenu-item ">
-                <a href="#">Formulir Peminjaman Buku</a>
+                <a href="{{ route('user.peminjaman.form') }}">Formulir Peminjaman Buku</a>
             </li>
             <li class="submenu-item">
-                <a href="#">Riwayat Peminjaman Buku</a>
+                <a href="{{ route('user.peminjaman.riwayat') }}">Riwayat Peminjaman Buku</a>
             </li>
         </ul>
     </li>
@@ -30,10 +30,10 @@
         </a>
         <ul class="submenu ">
             <li class="submenu-item">
-                <a href="#">Formulir Pengembalian Buku</a>
+                <a href="{{ route('user.pengembalian.form') }}">Formulir Pengembalian Buku</a>
             </li>
             <li class="submenu-item">
-                <a href="#">Riwayat Pengembalian Buku</a>
+                <a href="{{ route('user.pengembalian.riwayat') }}">Riwayat Pengembalian Buku</a>
             </li>
         </ul>
     </li>
@@ -52,19 +52,21 @@
         </a>
         <ul class="submenu ">
             <li class="submenu-item">
-                <a href="#">Pesan masuk
+                <a href="{{ route('user.pesan.masuk') }}">Pesan masuk
                     <span class="badge bg-light-danger badge-pill badge-round float-right mt-50">
+                        {{ count($pesan) }}
+
                </span>
                 </a>
             </li>
             <li class="submenu-item">
-                <a href="#">Pesan terkirim</a>
+                <a href="{{ route('user.pesan.terkirim') }}">Pesan terkirim</a>
             </li>
         </ul>
     </li>
 
     <li class="sidebar-item">
-        <a href="#" class='sidebar-link'>
+        <a href="{{ route('user.profile') }}" class='sidebar-link'>
             <i class="bi bi-file-earmark-medical-fill"></i>
             <span>Profile Saya </span>
         </a>

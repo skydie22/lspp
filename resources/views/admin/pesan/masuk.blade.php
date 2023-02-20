@@ -23,13 +23,24 @@
                 <td>{{ $p->status == 'terkirim' ? 'belum dibaca' : 'terbaca' }}</td>
                 <td>{{ $p->tanggal_kirim }}</td>
                 <td>
-                    @if ($p->status == 'terkirim')
+                    {{-- @if ($p->status == 'terkirim')
                         <form action="{{ route('admin.pesan.masuk.update', ['id' => $p->id]) }}" method="POST">
                             @csrf
                             <input type="hidden" name="penerima_id" value="{{ Auth::user()->id }}">
                             <button type="submit" class="btn btn-success">update
                             </button>
-                    @endif
+                    @endif --}}
+                    @if ($p->status == 'terkirim')
+                            <form action="{{ route('admin.pesan.masuk.update', ['id' => $p->id]) }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="penerima_id" value="{{ Auth::user()->id }}">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-check"></i>
+                                </button>
+
+                            </form>
+                            @else
+                            <button type="button" class="btn btn-primary"><i class="bi bi-check-all"></i>
+                        @endif
                 </td>
             </tr>
         @endforeach

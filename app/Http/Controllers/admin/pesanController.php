@@ -51,4 +51,12 @@ class pesanController extends Controller
 
         return redirect()->back();
     }
+
+    public function destroyPesan($id)
+    {
+        $pesanTerkirim = Pesan::findOrFail($id);
+        $pesanTerkirim->delete();
+
+        return redirect()->back();
+    }
 }

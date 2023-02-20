@@ -85,6 +85,14 @@
         </a>
     </li>
 
+    <li class="sidebar-item  ">
+        <a href="{{ route('admin.profile') }}" class='sidebar-link'>
+            <i class="bi bi-file-earmark-medical-fill"></i>
+            <span>Profil</span>
+        </a>
+    </li>
+
+
 
     <li class="sidebar-item {{ request()->is('logout*') ? 'active' : '' }} ">
         <a href="{{ route('logout') }}" onclick="event.preventDefault();

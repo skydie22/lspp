@@ -25,4 +25,22 @@ class PemberitahuanController extends Controller
         }
 
     }
+
+    public function update(Request $request, $id)
+    {
+        $pemberitahuan = Pemberitahuan::findOrFail($id);
+        $pemberitahuan->update([
+            'isi' => $request->isi,
+            'status' => $request->status
+        ]);
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        $pemberitahuan = Pemberitahuan::findOrFail($id);
+        $pemberitahuan->delete();
+
+        return redirect()->back();
+    }
 }

@@ -9,9 +9,14 @@ use App\Http\Controllers\admin\PemberitahuanController;
 use App\Http\Controllers\admin\PeminjamanController;
 use App\Http\Controllers\admin\PenerbitController;
 use App\Http\Controllers\admin\pesanController;
+use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\user\DashboardController as UserDashboardController;
+use App\Http\Controllers\user\PeminjamanController as UserPeminjamanController;
+use App\Http\Controllers\user\PengembalianController;
+use App\Http\Controllers\user\PesanController as UserPesanController;
+use App\Http\Controllers\user\ProfileController as UserProfileController;
 use App\Models\Pemberitahuan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -77,11 +82,39 @@ Route::prefix('admin')->middleware(['auth' , 'role:admin'])->group(function() {
     Route::get('/pesan/terkirim' , [pesanController::class, 'indexAdminterkirim'])->name('admin.pesan.terkirim');
     Route::post('/pesan/kirim', [pesanController::class, 'kirimPesanAdmin'])->name('admin.pesan.kirim');
     Route::post('/pesan/masuk/Ubah_status' , [pesanController::class , 'updateStatusAdmin'])->name('admin.pesan.masuk.update');
+    Route::delete('/pesan/delete/{id}' , [PesanController::class, 'destroyPesan'])->name('admin.pesan.delete');
+
 
     Route::get('/pemberitahuan', [PemberitahuanController::class, 'index'])->name('admin.pemberitahuan');
     Route::post('/pemberitahuan/store',[PemberitahuanController::class, 'store'])->name('admin.pemberitahuan.store');
+    Route::put('/pemberitahuan/update{id}', [PemberitahuanController::class, 'update'])->name('admin.pemberitahuan.update');
+    Route::delete('/pemberitahuan/delete{id}', [PemberitahuanController::class, 'destroy'])->name('admin.pemberitahuan.delete');
+
+    Route::get('/profile' , [ProfileController::class, 'index'])->name('admin.profile');
+    Route::put('/profile/update/', [ProfileController::class , 'update'])->name('admin.profile.update');
 
 });
 Route::prefix('user')->middleware(['auth' , 'role:user'])->group(function() {
     Route::get('/dashboard', [UserDashboardController::class , 'index'])->name('user.dashboard');
+
+    Route::get('/peminjaman/form' , [UserPeminjamanController::class, 'indexForm'])->name('user.peminjaman.form');
+    Route::post('/peminjaman/form' , [UserPeminjamanController::class, 'form'])->name('user.peminjaman.form');
+    Route::get('/peminjaman/riwayat' , [UserPeminjamanController::class, 'indexRiwayat'])->name('user.peminjaman.riwayat');
+    Route::post('/peminjaman/form/submit' , [UserPeminjamanController::class , 'storeForm'])->name('user.peminjaman.form.submit');
+
+    Route::get('/pengembalian/form', [PengembalianController::class, 'indexForm'])->name('user.pengembalian.form');
+    Route::post('/pengembalian/form/submit', [PengembalianController::class, 'storeForm'])->name('user.pengembalian.form.submit');
+    Route::get('/pengembalian/riwayat', [PengembalianController::class, 'indexRiwayat'])->name('user.pengembalian.riwayat');
+
+    Route::get('/profile' , [UserProfileController::class, 'index'])->name('user.profile');
+    Route::put('/profile/update/', [UserProfileController::class , 'update'])->name('user.profile.update');
+
+    Route::get('/pesan/masuk' , [UserPesanController::class, 'indexUserMasuk'])->name('user.pesan.masuk');
+    Route::get('/pesan/terkirim' , [UserPesanController::class, 'indexUserterkirim'])->name('user.pesan.terkirim');
+    Route::post('/pesan/kirim', [UserPesanController::class, 'kirimPesanUser'])->name('user.pesan.kirim');
+    Route::post('/pesan/masuk/Ubah_status' , [UserPesanController::class , 'updateStatusUser'])->name('user.pesan.masuk.update');
+    Route::delete('/pesan/delete/{id}' , [UserPesanController::class, 'destroyPesan'])->name('user.pesan.delete');
+
+
+
 });

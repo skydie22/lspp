@@ -29,8 +29,7 @@
                         <td>{{ $p->status }}</td>
                         <td>{{ $p->tanggal_kirim }}</td>
                         <td>
-
-                            <form action="{{ route('admin.pesan.delete' , $p->id)  }}" method="POST">
+                            <form action="{{ route('user.pesan.delete' , $p->id)  }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger">hapus</button>
@@ -43,5 +42,5 @@
 
     </div>
 </div>
-@include('admin/pesan/form');
+@include('user/pesan/form')
 @endsection

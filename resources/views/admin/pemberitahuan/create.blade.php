@@ -17,21 +17,14 @@ aria-hidden="true">
                     <div class="mb-3">
                         <textarea style="height: 100px" placeholder="Isi Pemberitahuan" type="text" name="isi" class="form-control" required></textarea>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="btn-group" role="group"
-                            aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" value="aktif" name="status"
-                                id="btnradio1" autocomplete="off" checked>
-                            <label class="btn btn-outline-primary" for="btnradio1">General</label>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Status</label>
+                        <select name="status"  class="form-select" >
 
-                            <input type="radio" class="btn-check" value="admin" name="status"
-                                id="btnradio2" autocomplete="off">
-                            <label class="btn btn-outline-light" for="btnradio2">Only Admin</label>
+                            <option value="aktif" >Aktif</option>
+                            <option value="nonaktif" >Nonaktif</option>
+                        </select>
 
-                            <input type="radio" class="btn-check" value="user" name="status"
-                                id="btnradio3" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btnradio3">Only User</label>
-                        </div>
                     </div>
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 </div>
