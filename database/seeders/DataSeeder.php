@@ -57,66 +57,66 @@ class DataSeeder extends Seeder
         //     'verif' => 'verified',
         // ]);
 
-        Kategori::create([
-            'kode' => 'umum',
-            'nama' => 'Umum'
-        ]);
-        Kategori::create([
-            'kode' => 'sains',
-            'nama' => 'Sains'
-        ]);
-        Kategori::create([
-            'kode' => 'sejarah',
-            'nama' => 'Sejarah'
-        ]);
+        // Kategori::create([
+        //     'kode' => 'umum',
+        //     'nama' => 'Umum'
+        // ]);
+        // Kategori::create([
+        //     'kode' => 'sains',
+        //     'nama' => 'Sains'
+        // ]);
+        // Kategori::create([
+        //     'kode' => 'sejarah',
+        //     'nama' => 'Sejarah'
+        // ]);
 
-        Penerbit::create([
-            'kode' => 'erlangga',
-            'nama' => 'Erlangga'
-        ]);
-        Penerbit::create([
-            'kode' => 'bukunesia',
-            'nama' => 'Bukunesia'
-        ]);
-        Penerbit::create([
-            'kode' => 'gramedia',
-            'nama' => 'Gramedia'
-        ]);
+        // Penerbit::create([
+        //     'kode' => 'erlangga',
+        //     'nama' => 'Erlangga'
+        // ]);
+        // Penerbit::create([
+        //     'kode' => 'bukunesia',
+        //     'nama' => 'Bukunesia'
+        // ]);
+        // Penerbit::create([
+        //     'kode' => 'gramedia',
+        //     'nama' => 'Gramedia'
+        // ]);
 
 
-        Buku::create([
-            'judul' => 'Cara meminum Ramune',
-            'kategori_id' => 1,
-            'penerbit_id' => 1,
-            'pengarang' => 'Aldy',
-            'tahun_terbit' => '2022',
-            'isbn' => '112233',
-            'j_buku_baik' => 15,
-            'j_buku_rusak' => 8,
-            'foto' => ''
-        ]);
-        Buku::create([
-            'judul' => 'Penelitian Meganthropus Anylotus',
-            'kategori_id' => 2,
-            'penerbit_id' => 2,
-            'pengarang' => 'Aldy BudiAsih',
-            'tahun_terbit' => '2022',
-            'isbn' => '223344',
-            'j_buku_baik' => 20,
-            'j_buku_rusak' => 5,
-            'foto' => ''
-        ]);
-        Buku::create([
-            'judul' => 'Sejarah terbentuknya PKI',
-            'kategori_id' => 3,
-            'penerbit_id' => 3,
-            'pengarang' => 'Aldy YGY',
-            'tahun_terbit' => '2022',
-            'isbn' => '556677',
-            'j_buku_baik' => 30,
-            'j_buku_rusak' => 10,
-            'foto' => ''
-        ]);
+        // Buku::create([
+        //     'judul' => 'Cara meminum Ramune',
+        //     'kategori_id' => 1,
+        //     'penerbit_id' => 1,
+        //     'pengarang' => 'Aldy',
+        //     'tahun_terbit' => '2022',
+        //     'isbn' => '112233',
+        //     'j_buku_baik' => 15,
+        //     'j_buku_rusak' => 8,
+        //     'foto' => ''
+        // ]);
+        // Buku::create([
+        //     'judul' => 'Penelitian Meganthropus Anylotus',
+        //     'kategori_id' => 2,
+        //     'penerbit_id' => 2,
+        //     'pengarang' => 'Aldy BudiAsih',
+        //     'tahun_terbit' => '2022',
+        //     'isbn' => '223344',
+        //     'j_buku_baik' => 20,
+        //     'j_buku_rusak' => 5,
+        //     'foto' => ''
+        // ]);
+        // Buku::create([
+        //     'judul' => 'Sejarah terbentuknya PKI',
+        //     'kategori_id' => 3,
+        //     'penerbit_id' => 3,
+        //     'pengarang' => 'Aldy YGY',
+        //     'tahun_terbit' => '2022',
+        //     'isbn' => '556677',
+        //     'j_buku_baik' => 30,
+        //     'j_buku_rusak' => 10,
+        //     'foto' => ''
+        // ]);
         Identitas::create([
             'nama_app' => 'E-Perpus SMKN 10',
             'alamat_app' => 'Jalan Jalan Sendiri :)',

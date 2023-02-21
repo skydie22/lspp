@@ -7,7 +7,7 @@
 </div>
 <div class="mb-3">
   <center>
-    <img src="/img/profile/{{ Auth::user()->foto == null ? 'profile.png' : Auth::user()->foto  }}" class="rounded-circle" style="width: 150px;"
+    <img src="/img/profile/{{ Auth::user()->foto == null ? 'profile.jpg' : Auth::user()->foto  }}" class="rounded-circle" style="width: 150px;"
       alt="Avatar" />
 
   </center>

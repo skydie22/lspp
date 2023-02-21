@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $admin = User::where('role' , 'admin')->get();
         $count = count($admin);
-        $code = 'UU00' . $count + 1 ;
+        $code = 'AA00' . $count + 1 ;
         return view('admin.admin.index', compact('admin','code'));
     }
 

@@ -175,7 +175,7 @@ $pemberitahuan = Pemberitahuan::orderBy('id', 'DESC')->take(5)->get();
                     </div>
                     <div class="user-img d-flex align-items-center">
                       <div class="avatar avatar-md">
-                        <img src="/img/profile/{{ Auth::user()->foto == null ? 'profile.png' : Auth::user()->foto  }}" />
+                        <img src="/img/profile/{{ Auth::user()->foto == null ? 'profile.jpg' : Auth::user()->foto  }}" />
                       </div>
                     </div>
                   </div>
