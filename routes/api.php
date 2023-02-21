@@ -61,14 +61,14 @@ Route::middleware(['auth:sanctum','role:admin'])->prefix('admin')->group(functio
     Route::prefix('/data-admin')->controller(userApiController::class)->group(function () {
         Route::get('/','allAdmin');
         Route::post('/store','tambahAdmin');
-        Route::post('/update','updateAdmin');
+        Route::post('/update/{id}','updateAdmin');
         Route::delete('/delete/{id}','destroyAdmin');
     });
 
     Route::prefix('/data-anggota')->controller(userApiController::class)->group(function () {
         Route::get('/','indexAnggota');
         Route::post('/store','storeAnggota');
-        Route::post('/update','updateAnggota');
+        Route::post('/update/{id}','updateAnggota');
         Route::delete('/delete/{id}','destroyAnggota');
     });
 
@@ -112,7 +112,7 @@ Route::middleware(['auth:sanctum','role:admin'])->prefix('admin')->group(functio
     Route::prefix('pemberitahuan')->controller(AdminPemberitahuanApiController::class)->group(function(){
         Route::get('/','index');
         Route::post('/store', 'store');
-        Route::post('/update' , 'update');
+        Route::post('/update/{id}' , 'update');
         Route::delete('/delete/{id}' , 'destroy');
     });
 
