@@ -20,6 +20,7 @@
                         <tr>
                             <th>No</th>
                             <th>Kode Anggota</th>
+                            <th>Foto</th>
                             <th>Nis</th>
                             <th>Nama Anggota</th>
                             <th>Nama Lengkap</th>
@@ -34,6 +35,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $a->kode }}</td>
+                            <td><img src="/img/profile/{{ $a->foto == null ? 'profile.jpg' : $a->foto  }}" class="rounded-circle" style="width:150px; height:150px"></td>
                             <td>{{ $a->nis }}</td>
                             <td>{{ $a->username }}</td>
                             <td>{{$a->fullname  }}</td>
